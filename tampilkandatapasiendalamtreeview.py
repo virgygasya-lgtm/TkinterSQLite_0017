@@ -107,3 +107,26 @@ def prediksi(gula, bmi, riwayat):
     jendela = tk.Toplevel(root)
     jendela.title("Riwayat Pasien")
 
+        kolom = (
+        "id", "nama_pasien", "usia",
+        "gula_darah", "bmi", "riwayat_ortu",
+        "hasil_prediksi"
+    )
+
+    tabel = ttk.Treeview(
+        jendela,
+        columns=kolom,
+        show="headings"
+    )
+
+    for k in kolom:
+        tabel.heading(k, text=k)
+        tabel.column(k, width=110)
+
+    tabel.pack(padx=10, pady=10)
+
+    cur.execute("SELECT * FROM pasien")
+
+    for baris in cur.fetchall():
+        tabel.insert("", tk.END, values=baris)
+

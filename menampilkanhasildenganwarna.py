@@ -89,3 +89,17 @@ def prediksi(gula, bmi, riwayat):
 
     conn.commit()
 
+        warna = {
+        "Rendah": "green",
+        "Waspada": "gold",
+        "Sedang": "orange",
+        "Tinggi": "red",
+        "Sangat Tinggi": "darkred"
+    }
+
+    label_hasil.config(
+        text="Risiko: " + hasil,
+        bg=warna[hasil],
+        fg="white"
+    )
+

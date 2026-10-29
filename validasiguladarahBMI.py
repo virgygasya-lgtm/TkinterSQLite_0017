@@ -61,3 +61,20 @@ def prediksi(gula, bmi, riwayat):
         )
         return
 
+        try:
+        gula = float(gula)
+        bmi = float(bmi)
+    except ValueError:
+        messagebox.showwarning(
+            "Peringatan",
+            "Gula darah dan BMI harus berupa angka!"
+        )
+        return
+
+    if gula <= 0 or bmi <= 0:
+        messagebox.showwarning(
+            "Peringatan",
+            "Gula darah dan BMI harus lebih dari 0!"
+        )
+        return
+

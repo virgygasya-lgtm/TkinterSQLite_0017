@@ -103,3 +103,7 @@ def prediksi(gula, bmi, riwayat):
         fg="white"
     )
 
+    def lihat_data():
+    jendela = tk.Toplevel(root)
+    jendela.title("Riwayat Pasien")
+

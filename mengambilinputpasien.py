@@ -38,3 +38,10 @@ def prediksi(gula, bmi, riwayat):
 
         return "Rendah"
 
+    def proses():
+    nama = entry_nama.get().strip()
+    usia = entry_usia.get().strip()
+    gula = entry_gula.get().strip()
+    bmi = entry_bmi.get().strip()
+    riwayat = combo_riwayat.get()
+

@@ -130,3 +130,42 @@ def prediksi(gula, bmi, riwayat):
     for baris in cur.fetchall():
         tabel.insert("", tk.END, values=baris)
 
+        # Tampilan GUI
+root = tk.Tk()
+root.title("Prediksi Risiko Diabetes")
+
+tk.Label(root, text="Nama Pasien").grid(
+    row=0, column=0, padx=10, pady=5, sticky="w"
+)
+entry_nama = tk.Entry(root, width=25)
+entry_nama.grid(row=0, column=1)
+
+tk.Label(root, text="Usia").grid(
+    row=1, column=0, padx=10, pady=5, sticky="w"
+)
+entry_usia = tk.Entry(root, width=25)
+entry_usia.grid(row=1, column=1)
+
+tk.Label(root, text="Gula Darah (mg/dL)").grid(
+    row=2, column=0, padx=10, pady=5, sticky="w"
+)
+entry_gula = tk.Entry(root, width=25)
+entry_gula.grid(row=2, column=1)
+
+tk.Label(root, text="BMI").grid(
+    row=3, column=0, padx=10, pady=5, sticky="w"
+)
+entry_bmi = tk.Entry(root, width=25)
+entry_bmi.grid(row=3, column=1)
+
+tk.Label(root, text="Riwayat Diabetes Ortu").grid(
+    row=4, column=0, padx=10, pady=5, sticky="w"
+)
+combo_riwayat = ttk.Combobox(
+    root,
+    values=["Ya", "Tidak"],
+    state="readonly",
+    width=22
+)
+combo_riwayat.grid(row=4, column=1)
+
